@@ -11,7 +11,7 @@
             <a href="./" class="navbar-brand">Spring MVC application</a>
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" ng-controller="homeController">
+            <ul class="nav navbar-nav">
                 <li><a href="./">Домашняя</a></li>
                 <li><a href="./about">О сайте</a></li>
                 <li><a href="#/contacts">Контакты</a></li><%--  --%>

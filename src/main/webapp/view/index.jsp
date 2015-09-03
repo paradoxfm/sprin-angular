@@ -1,12 +1,13 @@
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
-<head nh-app="zloApp">
+<html ng-app="zloApp">
+<head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>${title}</title>
     <link rel="stylesheet" href="./resources/css/bootstrap.min.css" type="text/css"/>
+    <%--<link rel="stylesheet" href="./resources/css/bootstrap-theme.min.css" type="text/css"/>--%>
     <link rel="stylesheet" href="./resources/css/site.css" type="text/css"/>
 
     <!--<link rel="stylesheet" href="./resources/css/bootstrap-theme.min.css" type="text/css"/>-->
@@ -21,7 +22,8 @@
         <!--<tiles:insertAttribute name="content"/>-->
     </div>
     <hr/>
-    <footer>
+    <footer ng-controller="homeController">
+        <button class="btn btn-default" ng-click="clickAlert()">Тест алерт</button>
         <p>&copy; Гуркин Иван</p>
     </footer>
 </div>
