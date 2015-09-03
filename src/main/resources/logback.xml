@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+    <!-- TRACE, DEBUG, INFO, WARN, ERROR, ALL or OFF. уровни логирования по нарастающи -->
+
+    <!--для рабочего, но надо предусмотреть еще для tcp-->
+    <if condition='property("HOSTNAME").contains("linergosrv")'>
+        <then>
+            <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+                <prudent>true</prudent>
+                <append>true</append>
+                <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                    <!-- daily rollover -->
+                    <fileNamePattern>${app.path}/logs/logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
+                    <!-- keep 30 days' worth of history -->
+                    <maxHistory>15</maxHistory>
+                </rollingPolicy>
+                <encoder>
+                    <pattern>%d{HH:mm:ss.SSS} %-5level [%thread] [%logger{30}:%line] -> %msg%n</pattern>
+                </encoder>
+            </appender>
+
+            <appender name="ASYNC_FILE" class="ch.qos.logback.classic.AsyncAppender">
+                <appender-ref ref="FILE"/>
+                <discardingThreshold>0</discardingThreshold>
+            </appender>
+
+            <logger name="com.platifon" level="info" additivity="false">
+                <appender-ref ref="ASYNC_FILE"/>
+            </logger>
+
+            <root level="warn">
+                <appender-ref ref="ASYNC_FILE"/>
+            </root>
+        </then>
+    </if>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                <!--at ru.megazlo.web.controller.SampleController.helloWorld(SampleController.java:27)-->
+                <!-- доп опции [%thread]  -->
+                %d{HH:mm:ss.SS} %-5level \(%file:%line\) -> %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <logger name="com.platifon" level="fatal" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <root level="warn">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
