@@ -28,6 +28,4 @@ public class HomeController {
     public String contactsView() {
         return "home/contacts";
     }
-
-
 }
