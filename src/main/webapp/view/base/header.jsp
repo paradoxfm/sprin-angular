@@ -13,8 +13,8 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="./">Домашняя</a></li>
-                <li><a href="./about">О сайте</a></li>
-                <li><a href="#/contacts">Контакты</a></li><%--  --%>
+                <li><a href="#!/about">О сайте</a></li>
+                <li><a href="#!/contacts">Контакты</a></li><%--  --%>
             </ul>
             <%--<tiles:insertAttribute name="loginPartial"/>--%>
             <form class="navbar-form" role="search">
