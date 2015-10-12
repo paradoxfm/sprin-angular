@@ -10,6 +10,14 @@ zloApp.config(['$routeProvider', function ($routeProvider) {
 
                 });
             }*/
+        })
+        .when('/about', {
+            templateUrl: 'views/aboutView',
+            controller: 'homeController'
+        })
+        .when('/', {
+            templateUrl: 'views/homeView',
+            controller: 'homeController'
         });
 }]);
 

@@ -28,4 +28,14 @@ public class HomeController {
     public String contactsView() {
         return "home/contacts";
     }
+
+    @RequestMapping("/views/aboutView")
+    public String aboutView() {
+        return "home/about";
+    }
+
+    @RequestMapping("/views/homeView")
+    public String homeView() {
+        return "home/home";
+    }
 }

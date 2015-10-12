@@ -19,6 +19,7 @@
 <jsp:include page="base/header.jsp"/>
 <div class="container body-content">
     <div id="content" ng-view>
+        <jsp:include page="home/home.jsp"/>
     </div>
     <hr/>
     <footer ng-controller="homeController">

@@ -12,7 +12,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="./">Домашняя</a></li>
+                <li><a href="#!/">Домашняя</a></li>
                 <li><a href="#!/about">О сайте</a></li>
                 <li><a href="#!/contacts">Контакты</a></li><%--  --%>
             </ul>
